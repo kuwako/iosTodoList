@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C06868D1CABD122008D56C8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06868C1CABD122008D56C8 /* Task.swift */; };
+		6C06868F1CABD3B2008D56C8 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06868E1CABD3B2008D56C8 /* CustomCell.swift */; };
 		6CEBCEEC1CA29A84000B9CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEBCEEB1CA29A84000B9CCE /* AppDelegate.swift */; };
 		6CEBCEEE1CA29A84000B9CCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEBCEED1CA29A84000B9CCE /* ViewController.swift */; };
 		6CEBCEF11CA29A84000B9CCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CEBCEEF1CA29A84000B9CCE /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C06868C1CABD122008D56C8 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		6C06868E1CABD3B2008D56C8 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		6CEBCEE81CA29A84000B9CCE /* iosTodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosTodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEBCEEB1CA29A84000B9CCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CEBCEED1CA29A84000B9CCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				6CEBCEEB1CA29A84000B9CCE /* AppDelegate.swift */,
 				6CEBCEED1CA29A84000B9CCE /* ViewController.swift */,
 				6CEBCEEF1CA29A84000B9CCE /* Main.storyboard */,
+				6C06868C1CABD122008D56C8 /* Task.swift */,
+				6C06868E1CABD3B2008D56C8 /* CustomCell.swift */,
 				6CEBCEF21CA29A84000B9CCE /* Assets.xcassets */,
 				6CEBCEF41CA29A84000B9CCE /* LaunchScreen.storyboard */,
 				6CEBCEF71CA29A84000B9CCE /* Info.plist */,
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C06868F1CABD3B2008D56C8 /* CustomCell.swift in Sources */,
 				6CEBCEEE1CA29A84000B9CCE /* ViewController.swift in Sources */,
+				6C06868D1CABD122008D56C8 /* Task.swift in Sources */,
 				6CEBCEEC1CA29A84000B9CCE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +492,7 @@
 				6CEBCF121CA29A84000B9CCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6CEBCF131CA29A84000B9CCE /* Build configuration list for PBXNativeTarget "iosTodoListTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +501,7 @@
 				6CEBCF151CA29A84000B9CCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6CEBCF161CA29A84000B9CCE /* Build configuration list for PBXNativeTarget "iosTodoListUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +510,7 @@
 				6CEBCF181CA29A84000B9CCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

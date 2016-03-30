@@ -34,20 +34,21 @@
                                     <barButtonItem title="add" id="M0B-rc-fjR"/>
                                 </items>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvC-XH-WZY">
-                                <rect key="frame" x="-20" y="-20" width="440" height="596"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LvC-XH-WZY">
+                                <rect key="frame" x="-20" y="-20" width="400" height="556"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIG-G4-PLi">
-                                        <rect key="frame" x="20" y="20" width="400" height="556"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIG-G4-PLi">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="556"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BLA-uV-adH">
-                                                <rect key="frame" x="20" y="20" width="400" height="556"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BLA-uV-adH">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="556"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OpU-B1-Mx5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="OpU-B1-Mx5" customClass="CustomCell" customModule="iosTodoList" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="400" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OpU-B1-Mx5" id="fp2-3O-UGy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タスク名タスク名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-7w-1aL">
@@ -56,7 +57,7 @@
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                                        <rect key="frame" x="18" y="11" width="136" height="21"/>
+                                                                        <rect key="frame" x="18" y="11" width="226" height="21"/>
                                                                     </variation>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-04-30 18:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPI-yD-QPA">
@@ -65,7 +66,7 @@
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                                        <rect key="frame" x="275" y="11" width="112" height="21"/>
+                                                                        <rect key="frame" x="261" y="11" width="112" height="21"/>
                                                                     </variation>
                                                                 </label>
                                                             </subviews>
@@ -109,14 +110,14 @@
                                 <exclude reference="ljc-dm-CzM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="U8L-1x-rrb"/>
-                                <exclude reference="u73-u3-VAL"/>
-                                <exclude reference="xcK-Ky-Lub"/>
                                 <exclude reference="9ut-tb-XIT"/>
                                 <exclude reference="ZYh-hc-DWl"/>
                                 <exclude reference="fIX-I8-IRI"/>
                                 <exclude reference="ndi-r2-IZ0"/>
                                 <exclude reference="ueu-dW-q9L"/>
+                                <exclude reference="U8L-1x-rrb"/>
+                                <exclude reference="u73-u3-VAL"/>
+                                <exclude reference="xcK-Ky-Lub"/>
                                 <exclude reference="eC7-nT-n35"/>
                             </mask>
                         </variation>
@@ -125,18 +126,22 @@
                                 <include reference="ljc-dm-CzM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="U8L-1x-rrb"/>
-                                <include reference="u73-u3-VAL"/>
-                                <include reference="xcK-Ky-Lub"/>
                                 <include reference="9ut-tb-XIT"/>
                                 <include reference="ZYh-hc-DWl"/>
                                 <include reference="fIX-I8-IRI"/>
                                 <exclude reference="ndi-r2-IZ0"/>
                                 <exclude reference="ueu-dW-q9L"/>
+                                <include reference="U8L-1x-rrb"/>
+                                <include reference="u73-u3-VAL"/>
+                                <include reference="xcK-Ky-Lub"/>
                                 <include reference="eC7-nT-n35"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="deadLine" destination="ZPI-yD-QPA" id="wrH-7L-xNo"/>
+                        <outlet property="tableView" destination="BLA-uV-adH" id="iWA-YO-RUC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
