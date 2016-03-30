@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -33,22 +34,87 @@
                                     <barButtonItem title="add" id="M0B-rc-fjR"/>
                                 </items>
                             </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvC-XH-WZY">
+                                <rect key="frame" x="-20" y="-20" width="440" height="596"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIG-G4-PLi">
+                                        <rect key="frame" x="20" y="20" width="400" height="556"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BLA-uV-adH">
+                                                <rect key="frame" x="20" y="20" width="400" height="556"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OpU-B1-Mx5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OpU-B1-Mx5" id="fp2-3O-UGy">
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タスク名タスク名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-7w-1aL">
+                                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                                        <rect key="frame" x="18" y="11" width="136" height="21"/>
+                                                                    </variation>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-04-30 18:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPI-yD-QPA">
+                                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                                        <rect key="frame" x="275" y="11" width="112" height="21"/>
+                                                                    </variation>
+                                                                </label>
+                                                            </subviews>
+                                                            <variation key="default">
+                                                                <mask key="subviews">
+                                                                    <exclude reference="ntS-7w-1aL"/>
+                                                                    <exclude reference="ZPI-yD-QPA"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <variation key="widthClass=compact">
+                                                                <mask key="subviews">
+                                                                    <include reference="ntS-7w-1aL"/>
+                                                                    <include reference="ZPI-yD-QPA"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                        <variation key="widthClass=compact" axis="vertical"/>
+                                    </stackView>
+                                </subviews>
+                                <variation key="widthClass=compact" axis="vertical"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ljc-dm-CzM" secondAttribute="trailing" id="9ut-tb-XIT"/>
+                            <constraint firstItem="LvC-XH-WZY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U8L-1x-rrb"/>
                             <constraint firstItem="ljc-dm-CzM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZYh-hc-DWl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ljc-dm-CzM" secondAttribute="bottom" id="eC7-nT-n35"/>
+                            <constraint firstItem="ljc-dm-CzM" firstAttribute="top" secondItem="LvC-XH-WZY" secondAttribute="bottom" id="fIX-I8-IRI"/>
                             <constraint firstItem="ljc-dm-CzM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ndi-r2-IZ0"/>
+                            <constraint firstAttribute="trailing" secondItem="LvC-XH-WZY" secondAttribute="trailing" id="u73-u3-VAL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ljc-dm-CzM" secondAttribute="trailing" id="ueu-dW-q9L"/>
+                            <constraint firstItem="LvC-XH-WZY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xcK-Ky-Lub"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ljc-dm-CzM"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="U8L-1x-rrb"/>
+                                <exclude reference="u73-u3-VAL"/>
+                                <exclude reference="xcK-Ky-Lub"/>
                                 <exclude reference="9ut-tb-XIT"/>
                                 <exclude reference="ZYh-hc-DWl"/>
+                                <exclude reference="fIX-I8-IRI"/>
                                 <exclude reference="ndi-r2-IZ0"/>
                                 <exclude reference="ueu-dW-q9L"/>
                                 <exclude reference="eC7-nT-n35"/>
@@ -59,8 +125,12 @@
                                 <include reference="ljc-dm-CzM"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="U8L-1x-rrb"/>
+                                <include reference="u73-u3-VAL"/>
+                                <include reference="xcK-Ky-Lub"/>
                                 <include reference="9ut-tb-XIT"/>
                                 <include reference="ZYh-hc-DWl"/>
+                                <include reference="fIX-I8-IRI"/>
                                 <exclude reference="ndi-r2-IZ0"/>
                                 <exclude reference="ueu-dW-q9L"/>
                                 <include reference="eC7-nT-n35"/>
