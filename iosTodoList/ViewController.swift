@@ -52,14 +52,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        
         let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("CustomCell", forIndexPath: indexPath) as! CustomCell
-        
         print(cell)
-        
         cell.setCell(tasks[indexPath.row])
         
         return cell
+        
     }
     
 

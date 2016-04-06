@@ -44,7 +44,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="556"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="OpU-B1-Mx5" customClass="CustomCell" customModule="iosTodoList" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" tag="48" contentMode="scaleToFill" restorationIdentifier="CustomCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="OpU-B1-Mx5" customClass="CustomCell" customModule="iosTodoList" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="400" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OpU-B1-Mx5" id="fp2-3O-UGy">
@@ -54,7 +54,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タスク名タスク名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-7w-1aL">
                                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                                         <rect key="frame" x="18" y="11" width="226" height="21"/>
@@ -63,7 +63,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-04-30 18:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPI-yD-QPA">
                                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                                         <rect key="frame" x="261" y="11" width="112" height="21"/>
@@ -139,7 +139,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="deadLine" destination="ZPI-yD-QPA" id="wrH-7L-xNo"/>
                         <outlet property="tableView" destination="BLA-uV-adH" id="iWA-YO-RUC"/>
                     </connections>
                 </viewController>
