@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIToolbarDelegate {
     
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var tableView: UITableView!
     var tasks:[Task] = [Task]()
     
@@ -49,8 +50,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return tasks.count
     }
     
-    
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("CustomCell", forIndexPath: indexPath) as! CustomCell
         print(cell)
@@ -60,7 +59,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-
+    // キーボードが表示されたときの処理
+    func handleKeyboardWillShowNotification(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        let transform = CGAffineTransformMakeTranslation(0, -keyboardScreenEndFrame.size.height);
+        self.view.transform = transform
+    }
     
+    // キーボードが非表示になったときの処理
+    func handleKeyboardWillHideNotification(notification: NSNotification) {
+         self.view.transform = CGAffineTransformIdentity
+    }
+    
+    // UITextFieldでリターンを押した時にキーボードを閉じる
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
 }
-
