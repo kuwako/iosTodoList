@@ -32,9 +32,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func setUpTasks() {
         let task1 = Task(taskName: "議事録を書く", deadline: "2016-03-30")
         let task2 = Task(taskName: "彼女を作る", deadline: "2016-04-30")
+        let task3 = Task(taskName: "あああ", deadline: "2016-05-30")
         
         tasks.append(task1)
         tasks.append(task2)
+        tasks.append(task3)
     }
     
     // functions needed to be implemented

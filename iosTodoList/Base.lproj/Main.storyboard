@@ -83,6 +83,10 @@
                                                                 </mask>
                                                             </variation>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="deadline" destination="ZPI-yD-QPA" id="JiG-Rx-CKT"/>
+                                                            <outlet property="taskName" destination="ntS-7w-1aL" id="qKD-BQ-cJQ"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
