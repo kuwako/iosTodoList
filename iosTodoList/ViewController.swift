@@ -13,6 +13,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var tableView: UITableView!
     var tasks:[Task] = [Task]()
+    @IBOutlet weak var textArea: UITextField!
+    @IBAction func addBtn(sender: AnyObject) {
+        let task = Task(taskName: textArea.text!, deadline: "2016-04-27")
+        tasks.append(task)
+        tableView.reloadData()
+        textArea.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

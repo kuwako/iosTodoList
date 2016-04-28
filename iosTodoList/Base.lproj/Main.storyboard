@@ -31,7 +31,11 @@
                                         </textField>
                                     </barButtonItem>
                                     <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="CTe-vi-eKF"/>
-                                    <barButtonItem title="add" id="M0B-rc-fjR"/>
+                                    <barButtonItem title="add" id="M0B-rc-fjR">
+                                        <connections>
+                                            <action selector="addBtn:" destination="BYZ-38-t0r" id="d4P-CE-co7"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LvC-XH-WZY">
@@ -144,6 +148,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="BLA-uV-adH" id="iWA-YO-RUC"/>
+                        <outlet property="textArea" destination="2Mz-ft-wdb" id="iiD-9J-gUt"/>
                         <outlet property="toolBar" destination="ljc-dm-CzM" id="HMh-MV-L9f"/>
                     </connections>
                 </viewController>
