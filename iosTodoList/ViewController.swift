@@ -15,7 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var tasks:[Task] = [Task]()
     @IBOutlet weak var textArea: UITextField!
     @IBAction func addBtn(sender: AnyObject) {
-        let task = Task(taskName: textArea.text!, deadline: "2016-04-27")
+        let now = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        dateFormatter.dateFormat = ("yyyy-MM-dd HH:mm")
+        
+        let task = Task(taskName: textArea.text!, deadline: dateFormatter.stringFromDate(now))
         tasks.append(task)
         tableView.reloadData()
         textArea.text = ""
