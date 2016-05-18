@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Task : NSObject {
-    var taskName:NSString
-    var deadline:NSString
+class Task : Object {
+    dynamic var taskName:NSString
+    dynamic var deadline:NSString
     
     init(taskName: String, deadline: String){
         self.taskName = taskName

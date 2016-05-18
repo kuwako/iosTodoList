@@ -35,7 +35,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle .SingleLine
-        
     }
 
     override func didReceiveMemoryWarning() {
