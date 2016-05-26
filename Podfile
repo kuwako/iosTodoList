@@ -5,6 +5,6 @@ platform :ios, '9.3'
 use_frameworks!
 
 target "iosTodoList" do
-    pod 'Realm', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'swift-2.0'
-    pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'swift-2.0'
+    pod 'Realm', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'master'
+    pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'master'
 end
