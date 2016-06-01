@@ -24,8 +24,8 @@ class CustomCell: UITableViewCell {
     }
     
     func setCell(task :Task) {
-        self.taskName.text = task.taskName as String
-        self.deadline.text = task.deadline as String
+        self.taskName.text = task.taskName! as String
+        self.deadline.text = task.deadline! as String
     }
 
 

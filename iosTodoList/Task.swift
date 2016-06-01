@@ -10,12 +10,21 @@ import Foundation
 import RealmSwift
 
 class Task : Object {
-    dynamic var taskName:NSString
-    dynamic var deadline:NSString
+    dynamic var taskName: String? = ""
+    dynamic var deadline: String? = ""
     
-    init(taskName: String, deadline: String){
+    convenience init(taskName: String, deadline: String) {
+        self.init()
         self.taskName = taskName
         self.deadline = deadline
     }
-  
+    
+    
 }
+//
+//let aDefaultRealm = Realm()
+//
+//var anObject = Task(taskName: "飲み会の予約", deadline: "John")
+//aDefaultRealm.write {
+//    aDefaultRealm.add(anObject)
+//}
