@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIToolbarDelegate {
     
@@ -29,8 +30,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.Content()
         
-        self.setUpTasks();
+//        self.setUpTasks();
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -42,15 +44,72 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
-    func setUpTasks() {
-        let task1 = Task(taskName: "議事録を書く", deadline: "2016-03-30")
-        let task2 = Task(taskName: "彼女を作る", deadline: "2016-04-30")
-        let task3 = Task(taskName: "あああ", deadline: "2016-05-30")
-        
-        tasks.append(task1)
-        tasks.append(task2)
-        tasks.append(task3)
+    let task = Task()
+    
+    func Content() {
+        task.taskName = "飲み会の予約"
+        task.deadline = "2016-06-02 20:00:00"
+        self.save()
+        self.dataGet()
     }
+    
+    // データの保存
+    func save() {
+        do {
+            let realm = try! Realm()
+            
+            try realm.write {
+                realm.add(self.task)
+            }
+        } catch {
+            // Error handling...
+        }
+    }
+    
+    // データの取得
+    func dataGet() {
+        
+        let realm = try! Realm()
+        
+        let dataContent = realm.objects(Task)
+        print(dataContent)
+        
+        // TODO ここにdataContent.forEachでリストに追加
+    }
+    
+    // データの更新
+    func dataUpdate() {
+        let realm = try! Realm()
+        
+        let task = realm.objects(Task).last!
+        try! realm.write {
+            task.taskName = "aaaa"
+            task.deadline = "2016-06-01 00:00:00"
+        }
+    }
+    
+    // データの削除
+    func dataDelete() {
+        let realm = try! Realm()
+        
+        let task = realm.objects(Task).last
+        try! realm.write {
+            // 最後のデータ
+            realm.delete(task!)
+            // 全てのデータ
+            //          realm.deleteAll()
+        }
+    }
+    
+//    func setUpTasks() {
+//        let task1 = Task(taskName: "議事録を書く", deadline: "2016-03-30")
+//        let task2 = Task(taskName: "彼女を作る", deadline: "2016-04-30")
+//        let task3 = Task(taskName: "あああ", deadline: "2016-05-30")
+//        
+//        tasks.append(task1)
+//        tasks.append(task2)
+//        tasks.append(task3)
+//    }
     
     // functions needed to be implemented
     // for table view
