@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var tableView: UITableView!
     var tasks:[Task] = [Task]()
+    var task = Task()
     @IBOutlet weak var textArea: UITextField!
     @IBAction func addBtn(sender: AnyObject) {
         let now = NSDate()
@@ -21,8 +22,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
         dateFormatter.dateFormat = ("yyyy-MM-dd HH:mm")
         
-        let task = Task(taskName: textArea.text!, deadline: dateFormatter.stringFromDate(now))
-        tasks.append(task)
+        let addTask = Task(taskName: textArea.text!, deadline: dateFormatter.stringFromDate(now))
+        tasks.append(addTask)
+        task = addTask
+        self.save()
         tableView.reloadData()
         textArea.text = ""
     }
@@ -30,9 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.Content()
-        
-//        self.setUpTasks();
+        self.dataGet()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -42,15 +43,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    let task = Task()
-    
-    func Content() {
-        task.taskName = "飲み会の予約"
-        task.deadline = "2016-06-02 20:00:00"
-        self.save()
-        self.dataGet()
     }
     
     // データの保存
@@ -74,45 +66,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dataContent = realm.objects(Task)
         print(dataContent)
         
-        // TODO ここにdataContent.forEachでリストに追加
-    }
-    
-    // データの更新
-    func dataUpdate() {
-        let realm = try! Realm()
-        
-        let task = realm.objects(Task).last!
-        try! realm.write {
-            task.taskName = "aaaa"
-            task.deadline = "2016-06-01 00:00:00"
+        for i in 0..<dataContent.count  {
+            tasks.append(dataContent[i])
         }
     }
     
     // データの削除
-    func dataDelete() {
+    func dataDelete(deleteTask: Task) {
         let realm = try! Realm()
         
-        let task = realm.objects(Task).last
         try! realm.write {
-            // 最後のデータ
-            realm.delete(task!)
-            // 全てのデータ
-            //          realm.deleteAll()
+            realm.delete(deleteTask)
         }
     }
-    
-//    func setUpTasks() {
-//        let task1 = Task(taskName: "議事録を書く", deadline: "2016-03-30")
-//        let task2 = Task(taskName: "彼女を作る", deadline: "2016-04-30")
-//        let task3 = Task(taskName: "あああ", deadline: "2016-05-30")
-//        
-//        tasks.append(task1)
-//        tasks.append(task2)
-//        tasks.append(task3)
-//    }
-    
-    // functions needed to be implemented
-    // for table view
     
     // セクション数
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -135,6 +101,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
+            // TODO realmからも削除
+            self.dataDelete(tasks[indexPath.row])
             tasks.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
