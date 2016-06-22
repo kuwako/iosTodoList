@@ -22,6 +22,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
         dateFormatter.dateFormat = ("yyyy-MM-dd HH:mm")
         
+        // TODO ここでデートピッカー生成
+        // DatePickerを生成する.
+        let myDatePicker: UIDatePicker = UIDatePicker()
+        
+        // datePickerを設定（デフォルトでは位置は画面上部）する.
+        myDatePicker.frame = CGRectMake(0, 50, self.view.frame.width, 200)
+        myDatePicker.timeZone = NSTimeZone.localTimeZone()
+        myDatePicker.backgroundColor = UIColor.whiteColor()
+        myDatePicker.layer.cornerRadius = 5.0
+        myDatePicker.layer.shadowOpacity = 0.5
+        
+        // 値が変わった際のイベントを登録する.
+        myDatePicker.addTarget(self, action: "onDidChangeDate:", forControlEvents: .ValueChanged)
+        
+        // DataPickerをViewに追加する.
+        self.view.addSubview(myDatePicker)
+        
+        // TODO データピッカーから値取得して登録
+        
         let addTask = Task(taskName: textArea.text!, deadline: dateFormatter.stringFromDate(now))
         tasks.append(addTask)
         task = addTask
@@ -127,5 +146,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         textField.resignFirstResponder()
         
         return true
+    }
+    
+    /*
+     DatePickerが選ばれた際に呼ばれる.
+     */
+    internal func onDidChangeDate(sender: UIDatePicker){
+        
+        // フォーマットを生成.
+        let myDateFormatter: NSDateFormatter = NSDateFormatter()
+        myDateFormatter.dateFormat = "yyyy/MM/dd hh:mm"
+        
+        // 日付をフォーマットに則って取得.
+        let mySelectedDate: NSString = myDateFormatter.stringFromDate(sender.date)
+        // TODO テキスト形式で返す
+//        myTextField.text = mySelectedDate as String
     }
 }
