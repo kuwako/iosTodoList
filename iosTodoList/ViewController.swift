@@ -30,11 +30,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myDatePicker.frame = CGRectMake(0, 50, self.view.frame.width, 200)
         myDatePicker.timeZone = NSTimeZone.localTimeZone()
         myDatePicker.backgroundColor = UIColor.whiteColor()
+        myDatePicker.datePickerMode = UIDatePickerMode.DateAndTime;
         myDatePicker.layer.cornerRadius = 5.0
         myDatePicker.layer.shadowOpacity = 0.5
         
         // 値が変わった際のイベントを登録する.
-        myDatePicker.addTarget(self, action: "onDidChangeDate:", forControlEvents: .ValueChanged)
+        myDatePicker.addTarget(self, action: #selector(ViewController.onDidChangeDate(_:)), forControlEvents: .ValueChanged)
         
         // DataPickerをViewに追加する.
         self.view.addSubview(myDatePicker)
